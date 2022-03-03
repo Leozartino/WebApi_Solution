@@ -13,7 +13,8 @@ namespace WebApi_Project.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuild)
         {
-            optionsBuild.UseSqlServer("Password=1525@Xyzt;Persist Security Info=True;User ID=sa;Initial Catalog=first_database;Data Source=DESKTOP-9P4JB41\SQLEXPRESS");
+            // Posso mudar o nome do banco e no caso do windows devmeos passar o @ para forçar o interpreter entender a string com backslash
+            optionsBuild.UseSqlServer(@"Password=1525@Xyzt;Persist Security Info=True;User ID=sa;Initial Catalog=first_database;Data Source=DESKTOP-9P4JB41\SQLEXPRESS");
         }
     }
 }
