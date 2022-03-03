@@ -2,7 +2,7 @@
 
 namespace WebApi_Project.Migrations
 {
-    public partial class initial : Migration
+    public partial class inita : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,18 +30,17 @@ namespace WebApi_Project.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Birth_date = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClassObjectId = table.Column<int>(type: "int", nullable: true),
-                    Class_id = table.Column<int>(type: "int", nullable: false)
+                    ClassId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Professors", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Professors_Classes_ClassObjectId",
-                        column: x => x.ClassObjectId,
+                        name: "FK_Professors_Classes_ClassId",
+                        column: x => x.ClassId,
                         principalTable: "Classes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -54,29 +53,28 @@ namespace WebApi_Project.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Birth_date = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ClassObjectId = table.Column<int>(type: "int", nullable: true),
-                    Class_id = table.Column<int>(type: "int", nullable: false)
+                    ClassId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Students", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Students_Classes_ClassObjectId",
-                        column: x => x.ClassObjectId,
+                        name: "FK_Students_Classes_ClassId",
+                        column: x => x.ClassId,
                         principalTable: "Classes",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Professors_ClassObjectId",
+                name: "IX_Professors_ClassId",
                 table: "Professors",
-                column: "ClassObjectId");
+                column: "ClassId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Students_ClassObjectId",
+                name: "IX_Students_ClassId",
                 table: "Students",
-                column: "ClassObjectId");
+                column: "ClassId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
