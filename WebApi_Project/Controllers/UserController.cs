@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WebApi_Project.Models;
 
 namespace WebApi_Project.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/professors")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -40,18 +41,73 @@ namespace WebApi_Project.Controllers
         //o c# não suporta conversão Implicita de operadores em Interface
         // Entao voce pode usar List(concreto) ou um IEnumerable mas no final
         // usar o .ToList() se caso eu usar um dbContext
-        public ActionResult<IEnumerable<User>> GetAllUser()
+        public ActionResult<IEnumerable<User>> IndexAllUsers()
         {
 
             return Ok(users);
         }
+          
+        [HttpGet]
+        [Route("index-one/{id}")]
+        public ActionResult<User> IndexOneUser(int id)
+        {
+            var user = users.Find((User user) => user.Id == id);
+
+            if (user == null)
+            {
+                return NotFound(new { message = "user not found!" });
+            }
+
+            return Ok(user);
+        }
+
 
         [HttpPost]
-        [Route("post-user")]
-        public ActionResult<User> PostUser([FromBody]User user)
+        [Route("create-user")]
+        public ActionResult<User> CreateUser([FromBody]User user)
         {
-            users.Add(user);
-            return Ok();
+            User userRequest = user;
+            users.Add(userRequest);
+
+            return Created("~api/User/create-user", userRequest);
+        }
+
+        [HttpPut]
+        [Route("update-user/{id}")]
+        public ActionResult<User> UpdateUser(User request, int id)
+        {
+            var user = users.Find((User user) => user.Id == id);
+
+            if(user == null)
+            {
+                return NotFound(new { message = "user not found!" });
+            }
+
+            user.Name = request.Name;
+            user.Email = request.Email;
+            user.Password = request.Password;
+
+
+            return Ok(user);
+
+
+        }
+
+        [HttpDelete]
+        [Route("delete-user/{id}")]
+        public ActionResult<User> DeleteUser(int id)
+        {
+            var user = users.Find((User user) => user.Id == id);
+
+            if (user == null)
+            {
+                return NotFound(new { message = "user not found!" });
+            }
+
+            users.Remove(user);
+
+            return Ok( new { message = "user removed sucessfully!"});
+
 
         }
     }

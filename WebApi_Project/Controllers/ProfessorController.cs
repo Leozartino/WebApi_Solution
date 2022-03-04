@@ -20,7 +20,7 @@ namespace WebApi_Project.Controllers
         }
 
         [HttpGet]
-        [Route("professors")]
+        [Route("index-all")]
         public async Task<ActionResult<IEnumerable<Professor>>> GetProfessors()
         {
             return Ok(await _appDbContext.Professors.ToListAsync());
