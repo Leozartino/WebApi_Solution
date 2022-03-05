@@ -1,7 +1,12 @@
-﻿namespace WebApi_Project.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace WebApi_Project.Models
 {
     public abstract class Person
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Birth_date { get; set; }
