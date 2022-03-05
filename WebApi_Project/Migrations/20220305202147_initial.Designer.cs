@@ -9,8 +9,8 @@ using WebApi_Project.Context;
 namespace WebApi_Project.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220303221002_inita")]
-    partial class inita
+    [Migration("20220305202147_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,9 +41,7 @@ namespace WebApi_Project.Migrations
             modelBuilder.Entity("WebApi_Project.Models.Professor", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("Birth_date")
                         .HasColumnType("nvarchar(max)");
@@ -70,9 +68,7 @@ namespace WebApi_Project.Migrations
             modelBuilder.Entity("WebApi_Project.Models.Student", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("Birth_date")
                         .HasColumnType("nvarchar(max)");

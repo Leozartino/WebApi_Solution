@@ -39,9 +39,7 @@ namespace WebApi_Project.Migrations
             modelBuilder.Entity("WebApi_Project.Models.Professor", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("Birth_date")
                         .HasColumnType("nvarchar(max)");
@@ -68,9 +66,7 @@ namespace WebApi_Project.Migrations
             modelBuilder.Entity("WebApi_Project.Models.Student", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("int");
 
                     b.Property<string>("Birth_date")
                         .HasColumnType("nvarchar(max)");
