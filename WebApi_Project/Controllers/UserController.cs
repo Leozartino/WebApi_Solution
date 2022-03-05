@@ -1,13 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using WebApi_Project.Models;
 
 namespace WebApi_Project.Controllers
 {
-    [Route("api/professors")]
+    
     [ApiController]
+    [Route("api/users")]
     public class UserController : ControllerBase
     {
         private static readonly List<User> users = new()
