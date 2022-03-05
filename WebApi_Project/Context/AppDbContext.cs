@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+// using Microsoft.Extensions.Configuration;
+// using System.IO;
 using WebApi_Project.Models;
 
 namespace WebApi_Project.Context
@@ -16,10 +18,16 @@ namespace WebApi_Project.Context
         public DbSet<Student> Students { get; set; }
         public DbSet<Professor> Professors {get;set;}
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuild)
-        {    
-            // Posso mudar o nome do banco e no caso do windows devmeos passar o @ para forçar o interpreter entender a string com backslash
-            optionsBuild.UseSqlServer(@"Password=1525@Xyzt;Persist Security Info=True;User ID=sa;Initial Catalog=first_database;Data Source=DESKTOP-9P4JB41\SQLEXPRESS");
-        }
-    }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    // Posso mudar o nome do banco e no caso do windows devmeos passar o @ para forçar o interpreter entender a string com backslash
+        //    // optionsBuild.UseSqlServer(@"Password=1525@Xyzt;Persist Security Info=True;User ID=sa;Initial Catalog=first_database;Data Source=DESKTOP-9P4JB41\SQLEXPRESS");
+        //    IConfiguration configuration = new ConfigurationBuilder()
+        //        .SetBasePath(Directory.GetCurrentDirectory())
+        //        .AddJsonFile("appsettings.json", false, true)
+        //        .Build();
+
+        //    optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+        //}
+    }   
 }
