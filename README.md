@@ -49,7 +49,7 @@ Adicione comandos de execução e exemplos que você acha que os usuários achar
 
 ## ✍️ Autor
 
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
+Feito por mim :)
 
 <table>
     <td align="center">
