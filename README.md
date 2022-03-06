@@ -16,11 +16,11 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+- [ ] Relacionamento entre tabelas
+- [ ] Criação de Services e separação de responsabilidades
+- [ ] Criar um arquivo para variaveis secretas .ENV
+- [ ] Renomeação de rotas para algo próximo de um projeto real
+
 
 ## 💻 Pré-requisitos
 
