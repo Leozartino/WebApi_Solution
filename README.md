@@ -33,7 +33,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Opcional [SQLServer Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)
 * Opcional [Postman](https://www.postman.com/downloads/)
 
-## 🚀 Rodando o projeto <WebApi_Solution>
+## 🚀 Rodando o projeto WebApi_Solution
 
 Para instalar o <WebApi_Solution>, siga estas etapas:
 
