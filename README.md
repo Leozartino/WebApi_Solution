@@ -8,7 +8,9 @@
 
 
 <img src="https://images.ctfassets.net/23aumh6u8s0i/4Q6uHmPKZjR2XVuIehcO9J/4537716dd5f5d355c8a64c16726f15c0/jwt" alt="JWT">
-<div class="tenor-gif-embed" data-postid="7603564" data-share-method="host" data-aspect-ratio="1.78" data-width="100%"><a href="https://tenor.com/view/programmer-programming-computer-typing-gif-7603564">Programmer Programming GIF</a>from <a href="https://tenor.com/search/programmer-gifs">Programmer GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<div style="display: inline_block"><br>
+  <img align="right" alt="gif" height="150" src="https://cdn.discordapp.com/attachments/832452168111489045/950069518640754708/FuqGGUPh2r8D5y9joV5UzJLme-Q5KVUq-SQYaJrVOvE.gif">
+</div>
 
 > JWT (JSON Web Token) é um método RCT 7519 padrão da indústria para realizar autenticação entre duas partes por meio de um token assinado que autentica uma requisição web. Esse token é um código em Base64 que armazena objetos JSON com os dados que permitem a autenticação da requisição
 
