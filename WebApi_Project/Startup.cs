@@ -1,10 +1,14 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
+using WebApi_Project.Auth;
 using WebApi_Project.Context;
 
 namespace WebApi_Project
@@ -27,6 +31,29 @@ namespace WebApi_Project
             });
             services.AddControllers();
 
+            //Como validação do token
+            var key = Encoding.ASCII.GetBytes(Settings.Secret);
+
+
+
+            //Setamos a configuração para a cada req o server procurar pelo token
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(y =>
+            {
+                y.RequireHttpsMetadata = false;
+                y.SaveToken = true;
+                y.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                };
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi_Project", Version = "v1" });
@@ -47,7 +74,8 @@ namespace WebApi_Project
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            //Sempre a auntenticação e depois autorização
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
