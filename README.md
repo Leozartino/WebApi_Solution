@@ -6,7 +6,7 @@
 
 
 
-<img src="exemplo-image.png" alt="exemplo imagem">
+<img src="https://images.ctfassets.net/23aumh6u8s0i/4Q6uHmPKZjR2XVuIehcO9J/4537716dd5f5d355c8a64c16726f15c0/jwt" alt="JWT">
 
 > Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
 
