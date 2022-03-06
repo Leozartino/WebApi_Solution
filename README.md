@@ -9,7 +9,7 @@
 
 <img src="https://images.ctfassets.net/23aumh6u8s0i/4Q6uHmPKZjR2XVuIehcO9J/4537716dd5f5d355c8a64c16726f15c0/jwt" alt="JWT">
 <div style="display: inline_block"><br>
-  <img align="right" alt="gif" height="150" style="border-radius:50px;" src="https://tenor.com/view/programmer-programming-computer-typing-gif-7603564">
+  <img align="right" alt="gif" height="150" style="border-radius:50px;" src="https://giphy.com/gifs/13HgwGsXF0aiGY4">
 </div>
 
 > JWT (JSON Web Token) é um método RCT 7519 padrão da indústria para realizar autenticação entre duas partes por meio de um token assinado que autentica uma requisição web. Esse token é um código em Base64 que armazena objetos JSON com os dados que permitem a autenticação da requisição
