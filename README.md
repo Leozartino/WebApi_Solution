@@ -25,9 +25,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
-* Você instalou a versão do ASP .NET Core 5.0 SDK ([5.0.405](https://dotnet.microsoft.com/en-us/download/dotnet/5.0))
+* Você instalou a versão do ASP .NET Core 5.0 [SDK 5.0.405](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)
 * Você tem uma máquina `<Windows / Linux / Mac>`. O projeto foi desenvolvido no Windows 10
-* Você possui instalado o ([SQLServer Express 2016](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver15))
+* Você possui instalado o [SQLServer Express 2016](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver15)
 
 ## 🚀 Instalando <nome_do_projeto>
 
