@@ -59,7 +59,6 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
           <b>Leonardo Oliveira</b>
         </sub>
       </a>
-    </td>
     <td align="center">
 </table>
 
