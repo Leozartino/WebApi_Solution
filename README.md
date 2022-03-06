@@ -47,7 +47,7 @@ Para usar <nome_do_projeto>, siga estas etapas:
 
 Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
 
-## 🤝 Colaboradores
+## ✍️ Autor
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
