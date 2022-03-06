@@ -35,9 +35,9 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 Para instalar o <WebApi_Solution>, siga estas etapas:
 
 CLI (Windows / Linux):
-```
-<dotnet restore>
-<dotnet run>
+```bash
+dotnet restore
+dotnet run
 ```
 
 Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Fornece uma referência de opções para pontos de bônus!
