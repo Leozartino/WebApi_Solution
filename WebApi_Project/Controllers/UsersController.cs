@@ -49,12 +49,67 @@ namespace WebApi_Project.Controllers
         }
 
         [HttpGet]
+        [Route("index-one/{id}")]
+        public async Task<ActionResult<User>> IndexOneUser(int id)
+        {
+            var user = await _appDbContext.Users.FindAsync(id);
+
+            if (user == null)
+            {
+                return NotFound(new { message = "user not found!" });
+            }
+
+            return Ok(user);
+        }
+
+        [HttpGet]
         [Route("index-all")]
         public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
         {
             return Ok(await _appDbContext.Users.ToListAsync());
         }
+  
 
+        [HttpPut]
+        [Route("update-user/{id}")]
+        public async Task<ActionResult<User>> UpdateUser(User request, int id)
+        {
+            var user = await _appDbContext.Users.FindAsync(id);
+
+            if (user == null)
+            {
+                return NotFound(new { message = "user not found!" });
+            }
+
+            user.Name = request.Name;
+            user.Email = request.Email;
+
+            await _appDbContext.SaveChangesAsync();
+
+
+            return Ok(user);
+
+
+        }
+
+        [HttpDelete]
+        [Route("delete-user/{id}")]
+        public async Task<ActionResult> DeleteUser(int id)
+        {
+            var user = await _appDbContext.Users.FindAsync(id);
+
+            if (user == null)
+            {
+                return NotFound(new { message = "user not found!" });
+            }
+
+            _appDbContext.Users.Remove(user);
+            await _appDbContext.SaveChangesAsync();
+
+            return Ok(new { message = "user removed sucessfully!" });
+
+
+        }
 
 
 
