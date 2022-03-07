@@ -11,9 +11,6 @@ namespace WebApi_Project.Context
     }
     // Existe um padrão quando a gente usa o EntityFramework
     // para nomear listas no plural
-    public DbSet<Class> Classes { get; set; }
-    public DbSet<Student> Students { get; set; }
-    public DbSet<Professor> Professors { get; set; }
-    // public DbSet<User> Users { get; set; }
+    public DbSet<User> Users { get; set; }
   }
 }
