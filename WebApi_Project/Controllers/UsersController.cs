@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using WebApi_Project.Models;
 
 namespace WebApi_Project.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
@@ -22,6 +24,7 @@ namespace WebApi_Project.Controllers
             _appDbContext = appDbContext;
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("create-user")]
         public async Task<ActionResult<User>> CreateUser([FromBody] UserDto userDto)
@@ -62,6 +65,7 @@ namespace WebApi_Project.Controllers
             return Ok(user);
         }
 
+        [AllowAnonymous]
         [HttpGet]
         [Route("index-all")]
         public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()

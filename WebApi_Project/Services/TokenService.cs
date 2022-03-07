@@ -13,6 +13,7 @@ namespace WebApi_Project.Services
         public static string GenerateToken(User user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
+            // Faz uma string ser "convertida" para array de bytes
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
 
             var tokenDescriptor = new SecurityTokenDescriptor
@@ -20,8 +21,8 @@ namespace WebApi_Project.Services
                 Subject = new ClaimsIdentity(
                     new Claim[]
                     {
-                        new Claim(ClaimTypes.Name, user.Id.ToString()),
-                        new Claim(ClaimTypes.Role, user.Name.ToString()),
+                        new Claim(ClaimTypes.NameIdentifier, user.Username),
+                        new Claim(ClaimTypes.Role, user.Role.ToString()),
                     }
                     ),
                 Expires = DateTime.UtcNow.AddHours(8),
