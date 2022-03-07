@@ -76,7 +76,7 @@ namespace WebApi_Project.Controllers
 
         [HttpPut]
         [Route("update-user/{id}")]
-        public async Task<ActionResult<User>> UpdateUser(User request, int id)
+        public async Task<ActionResult<User>> UpdateUser([FromBody] UserUpdate request, int id)
         {
             var user = await _appDbContext.Users.FindAsync(id);
 
@@ -92,8 +92,6 @@ namespace WebApi_Project.Controllers
 
 
             return Ok(user);
-
-
         }
 
         [HttpDelete]
